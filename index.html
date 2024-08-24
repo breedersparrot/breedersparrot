@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادة ميلاذ الببغاء</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>شهادة ميلاذ الببغاء</h1>
+            <button id="lang-toggle">English</button>
+        </header>
+
+        <main class="main">
+            <section class="form-section">
+                <form id="parrot-form" class="form">
+                    <div class="form-group">
+                        <label for="parrotImage">استيراد صورة الببغاء :</label>
+                        <input type="file" id="parrotImage" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="logoImage">استيراد صورة الشعار :</label>
+                        <input type="file" id="logoImage" accept="image/*">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="parrotType">نوع الببغاء :</label>
+                        <select id="parrotType">
+                            <option value="كوكتيل">كوكتيل</option>
+                            <option value="كنيور">كنيور</option>
+                            <option value="كنيور باينبل">كنيور باينبل</option>
+                            <option value="كنيور تركوازي">كنيور تركوازي</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="parrotSubtype">فصيلة نوع الببغاء :</label>
+                        <select id="parrotSubtype">
+                            <option value="لاتينو">لاتينو</option>
+                            <option value="نورمل">نورمل</option>
+                            <option value="بايد">بايد</option>
+                            <option value="وايت فيس">وايت فيس</option>
+                            <option value="كريمي">كريمي</option>
+                            <option value="سينامون">سينامون</option>
+                            <option value="تايقر">تايقر</option>
+                            <option value="كنيور يلوا سياد">كنيور يلوا سياد</option>
+                            <option value="كنيور رد فاكتور">كنيور رد فاكتور</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="birthDate">تاريخ الميلاد :</label>
+                        <input type="date" id="birthDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nationality">الجنسية :</label>
+                        <select id="nationality">
+                            <option value="البحرين">البحرين</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="region">المنطقة :</label>
+                        <select id="region">
+                            <option value="سار">سار</option>
+                            <option value="مقابة">مقابة</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="legBand">معلومات الحجل :</label>
+                        <input type="text" id="legBand">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactNumber">رقم التواصل :</label>
+                        <input type="text" id="contactNumber">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="issueDate">تاريخ إصدار الشهادة :</label>
+                        <input type="date" id="issueDate">
+                    </div>
+                    
+                    <button type="button" id="issueCertificateBtn" class="btn-primary">إصدار الشهادة</button>
+                </form>
+            </section>
+
+            <section class="certificate-section" style="display:none;">
+                <div id="certificate" class="certificate">
+                    <div class="certificate-content">
+                        <div class="certificate-image">
+                            <img id="parrotImageDisplay" src="#" alt="صورة الببغاء" style="display:none;">
+                        </div>
+                        <div class="certificate-logo">
+                            <img id="logoImageDisplay" src="#" alt="صورة الشعار" style="display:none;">
+                        </div>
+                        <div class="certificate-details">
+                            <h2>شهادة ميلاذ الببغاء</h2>
+                            <p><strong>نوع الببغاء :</strong> <span id="displayParrotType"></span></p>
+                            <p><strong>فصيلة نوع الببغاء :</strong> <span id="displayParrotSubtype"></span></p>
+                            <p><strong>تاريخ الميلاد :</strong> <span id="displayBirthDate"></span></p>
+                            <p><strong>الجنسية :</strong> <span id="displayNationality"></span></p>
+                            <p><strong>المنطقة :</strong> <span id="displayRegion"></span></p>
+                            <p><strong>معلومات الحجل :</strong> <span id="displayLegBand"></span></p>
+                            <p><strong>رقم التواصل :</strong> <span id="displayContactNumber"></span></p>
+                            <p><strong>تاريخ  إصدار الشهادة :</strong> <span id="displayIssueDate"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="download-buttons">
+                    <button id="downloadPNG" class="btn-secondary">تحميل الشهادة كصورة PNG</button>
+                    <button id="downloadPDF" class="btn-secondary">تحميل الشهادة كـ PDF</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
